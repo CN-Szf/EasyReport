@@ -7,7 +7,7 @@ spring:
         master:
           url: jdbc:mysql://localhost:3306/easy-report?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
           username: root
-          password: hP#e,t0+~_0t92yM]LV5
+          password: 123456
           driver-class-name: com.mysql.cj.jdbc.Driver
           type: com.alibaba.druid.pool.DruidDataSource #使用 Druid
     druid:

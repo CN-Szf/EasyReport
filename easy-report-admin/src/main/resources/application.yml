@@ -45,6 +45,13 @@ spring:
     basename: i18n/messages
   profiles:
     active: druid
+  # JPA 配置
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL57Dialect
+    hibernate:
+      ddl-auto: update
+#    show-sql: true
   # 文件上传
   servlet:
     multipart:
@@ -114,3 +121,6 @@ xss:
   excludes: /system/notice
   # 匹配链接
   urlPatterns: /system/*,/monitor/*,/tool/*
+
+anyline:
+  sql-delimiter-open: true
