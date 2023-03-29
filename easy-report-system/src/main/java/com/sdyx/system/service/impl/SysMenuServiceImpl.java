@@ -1,5 +1,7 @@
 package com.sdyx.system.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.sdyx.common.constant.Constants;
 import com.sdyx.common.constant.UserConstants;
 import com.sdyx.common.core.domain.TreeSelect;
@@ -285,6 +287,11 @@ public class SysMenuServiceImpl implements ISysMenuService {
             return UserConstants.NOT_UNIQUE;
         }
         return UserConstants.UNIQUE;
+    }
+
+    @Override
+    public SysMenu selectMenuByName(String menuName) {
+        return menuMapper.selectMenuByName(menuName);
     }
 
     /**

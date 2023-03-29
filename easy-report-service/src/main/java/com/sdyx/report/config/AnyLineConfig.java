@@ -19,6 +19,7 @@ public class AnyLineConfig implements ApplicationContextAware {
     }
 
     private void configAnyLine() {
+        ConfigTable.IS_DEBUG = false;
         ConfigTable.IS_SQL_DELIMITER_OPEN = true;
     }
 

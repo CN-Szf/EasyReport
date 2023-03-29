@@ -114,4 +114,12 @@ public interface SysMenuMapper {
      * @return 结果
      */
     public SysMenu checkMenuNameUnique(@Param("menuName") String menuName, @Param("parentId") Long parentId);
+
+    /**
+     * 根据名称查询菜单
+     *
+     * @param menuName 菜单名称
+     * @return {@link SysMenu}
+     */
+    SysMenu selectMenuByName(String menuName);
 }

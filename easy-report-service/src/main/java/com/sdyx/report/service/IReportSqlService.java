@@ -18,6 +18,14 @@ public interface IReportSqlService extends IService<ReportSql> {
     List<ReportSql> selectReportSqlList(ReportSql reportSql);
 
     /**
+     * 查询Sql
+     *
+     * @param sqlName sql名字
+     * @return {@link ReportSqlBo}
+     */
+    ReportSqlBo selectReportSqlBySqlName(String sqlName);
+
+    /**
      * 新增报表sql
      * @param reportSqlBo
      */

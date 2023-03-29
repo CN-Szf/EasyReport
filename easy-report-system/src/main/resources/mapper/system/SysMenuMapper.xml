@@ -177,6 +177,10 @@
         <include refid="selectMenuVo"/>
         where menu_name=#{menuName} and parent_id = #{parentId} limit 1
     </select>
+    <select id="selectMenuByName" resultType="com.sdyx.common.core.domain.entity.SysMenu">
+        <include refid="selectMenuVo"/>
+        where menu_name = #{menuName} limit 1
+    </select>
 
     <update id="updateMenu" parameterType="SysMenu">
         update sys_menu

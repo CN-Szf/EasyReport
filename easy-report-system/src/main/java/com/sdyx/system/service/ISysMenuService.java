@@ -131,4 +131,12 @@ public interface ISysMenuService {
      * @return 结果
      */
     public String checkMenuNameUnique(SysMenu menu);
+
+    /**
+     * 查询菜单名称查询
+     *
+     * @param menuName 菜单名称
+     * @return {@link List}<{@link SysMenu}>
+     */
+    SysMenu selectMenuByName(String menuName);
 }

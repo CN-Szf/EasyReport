@@ -48,8 +48,8 @@ public class DatabaseService {
         if (table == null) {
             table = createNewTable(metaTable);
         } else {
-            modifyColumn(metaTable, table);
             CacheProxy.clearColumnCache(tableName);
+            modifyColumn(metaTable, table);
         }
 
         try {

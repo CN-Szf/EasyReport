@@ -2,6 +2,7 @@ package com.sdyx.report.service.impl;
 
 import cn.hutool.core.collection.CollectionUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.sdyx.common.exception.ServiceException;
 import com.sdyx.common.utils.StringUtils;
@@ -41,6 +42,20 @@ public class ReportSqlServiceImpl extends ServiceImpl<ReportSqlMapper, ReportSql
                 .like(StringUtils.isNotBlank(reportSql.getSqlName()),
                         ReportSql::getSqlName, reportSql.getSqlName()));
 
+    }
+
+    @Override
+    public ReportSqlBo selectReportSqlBySqlName(String sqlName) {
+        LambdaQueryWrapper<ReportSql> query = Wrappers.<ReportSql>lambdaQuery().eq(ReportSql::getSqlName, sqlName);
+        ReportSql reportSql = this.getOne(query);
+        if (reportSql == null) {
+            return null;
+        }
+        List<ReportSqlColumn> reportSqlColumns = getReportSqlColumn(reportSql.getId());
+        ReportSqlBo reportSqlBo = new ReportSqlBo();
+        reportSqlBo.setReportSql(reportSql);
+        reportSqlBo.setReportSqlColumn(reportSqlColumns);
+        return reportSqlBo;
     }
 
     @Override

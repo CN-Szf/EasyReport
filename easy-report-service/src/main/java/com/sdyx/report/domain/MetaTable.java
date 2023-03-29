@@ -1,6 +1,6 @@
 package com.sdyx.report.domain;
 
-import com.sdyx.report.domain.MetaColumn;
+import com.sdyx.report.event.MetaTableListener;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -39,7 +39,7 @@ import java.util.List;
         uniqueConstraints = {@UniqueConstraint(name = "udx_meta_table_name", columnNames = "name"),
                 @UniqueConstraint(name = "udx_meta_table_comment", columnNames = "comment")
 })
-@EntityListeners(AuditingEntityListener.class)
+@EntityListeners({AuditingEntityListener.class, MetaTableListener.class})
 public class MetaTable {
 
     @Id
