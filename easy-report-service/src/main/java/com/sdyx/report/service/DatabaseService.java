@@ -105,7 +105,7 @@ public class DatabaseService {
             String columnTypeDefinition = metaColumn.getType().getDefinition();
             table.addColumn(columnName, columnTypeDefinition)
                     .setComment(columnComment)
-                    .setAfter(" " + afterColumnName);
+                    .setAfter(afterColumnName);
         }
     }
 
