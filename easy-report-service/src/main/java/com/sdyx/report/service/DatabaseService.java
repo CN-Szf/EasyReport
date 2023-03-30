@@ -83,7 +83,7 @@ public class DatabaseService {
                 continue;
             }
             column.setType(metaColumn.getType().getDefinition());
-            column.setAfter(" " + lastColumnName);
+            column.setAfter(lastColumnName);
             lastColumnName = column.getName();
 
             commentMap.remove(comment);

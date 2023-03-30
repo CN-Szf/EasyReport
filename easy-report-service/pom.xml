@@ -28,7 +28,7 @@
         <dependency>
             <groupId>org.anyline</groupId>
             <artifactId>anyline-data-jdbc-mysql</artifactId>
-            <version>8.6.3-20230320</version>
+            <version>8.6.3-20230327</version>
         </dependency>
     </dependencies>
 </project>
